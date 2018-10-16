@@ -21,14 +21,6 @@ EXIT_CODE=0
 
 TARGETS=$(cat ${TRAVIS_BUILD_DIR}/targets.txt)
 for unittest in ${TARGETS}; do
-    # TODO: ignore tests that fail on Ubuntu 14.04
-    if [ ${TRAVIS_OS_NAME} = "linux" ]; then
-        if [ "$unittest" = "net/oic/test" -o "$unittest" = "net/ip/mn_socket/test" ]; then
-            echo "Ignoring $unittest"
-            continue
-        fi
-    fi
-
     echo "Testing unittest=$unittest"
     newt test -q $unittest
 
