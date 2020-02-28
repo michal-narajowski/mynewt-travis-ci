@@ -35,7 +35,7 @@ go version
 
 retry_3_times go get -v mynewt.apache.org/newt/newt
 
-rm -rf $GOPATH/bin $GOPATH/pkg
+# rm -rf $GOPATH/bin $GOPATH/pkg
 
 retry_3_times go install -v mynewt.apache.org/newt/newt
 

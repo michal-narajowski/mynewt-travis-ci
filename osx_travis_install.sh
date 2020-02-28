@@ -24,9 +24,9 @@ echo "Doing OSX install"
 export HOMEBREW_NO_AUTO_UPDATE=1
 
 if [ "${TRAVIS_REPO_SLUG}" == "*mynewt-newt" ]; then
-    $HOME/ci/newt_build.sh
+    $HOME/ci/newt_build.sh && exit 1
 else
-    $HOME/ci/newt_install.sh
+    $HOME/ci/newt_install.sh && exit 1
 fi
 
 if [ "${TEST}" == "TEST_ALL" ] || [ "${TEST}" == "TEST_NEWT" ]; then
